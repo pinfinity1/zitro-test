@@ -7,7 +7,7 @@ import tagIcon from "../../public/images/header/tag.svg";
 
 export default function Menu() {
   return (
-    <menu className="hidden max-w-[1600px] mx-auto md:flex p-4 overflow-auto">
+    <menu className="hidden max-w-[1600px] mx-auto md:flex p-4">
       <ul className="flex gap-6">
         <ListItem imgSrc={layerIcon} title="دسته بندی کالا" />
 
@@ -39,7 +39,7 @@ const ListItem = ({
   return (
     <li
       className={`flex cursor-pointer gap-2 justify-start items-center ${
-        bgColor ? `bg-[${bgColor}]` : "bg-white"
+        bgColor ? `bg-[#FF878733]` : "bg-white"
       } p-2 rounded-lg text-[${textColor ? textColor : "inherit"}]`}
     >
       <Image src={imgSrc} width={16} height={16} alt={title} />

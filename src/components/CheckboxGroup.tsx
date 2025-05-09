@@ -24,13 +24,13 @@ export default function CheckboxGroup() {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-[25px]">
+    <div className="flex flex-wrap items-center gap-4 md:gap-6">
       {colorOptions.map((color) => {
         const isSelected = selectedColor === color.id;
         return (
           <label
             key={color.id}
-            className={`flex w-[104px] items-center gap-2 p-2 rounded-xl border border-solid cursor-pointer ${
+            className={`flex w-[88px] md:w-[104px] items-center gap-2 p-1 md:p-2 rounded-xl border border-solid cursor-pointer ${
               isSelected
                 ? "bg-[#fff4e6] border-[#f76707]"
                 : "border-[#dee2e61a]"

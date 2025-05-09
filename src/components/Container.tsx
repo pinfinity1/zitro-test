@@ -1,6 +1,3 @@
-"use client";
-import { useState } from "react";
-import { Radio, FormControlLabel, RadioGroup } from "@mui/material";
 import Image from "next/image";
 import logo from "../../public/images/logo.svg";
 import rotateSVG from "../../public/images/rotate.svg";
@@ -22,21 +19,26 @@ import likeSVG from "../../public/images/like.svg";
 import checkSVG from "../../public/images/check.svg";
 import starSVG from "../../public/images/star.svg";
 import checksquareSVG from "../../public/images/tick-square.svg";
+import chevronDownSVG from "../../public/images/chevrondown.svg";
+import homeSVG from "../../public/images/home.svg";
+import headphonesSVG from "../../public/images/headphones.svg";
+import fastDeliverySVG from "../../public/images/fast-delivery.svg";
+import checkListSVG from "../../public/images/checklist.svg";
+import productsSVG from "../../public/images/products.svg";
 import CheckboxGroup from "./CheckboxGroup";
+import ImageSlider from "./ImageSlider";
 
 export default function Container() {
-  const [selected, setSelected] = useState("insurance");
-
   return (
-    <div className="w-full max-w-[1600px] mx-auto pt-4 pb-6">
+    <div className="w-full max-w-[1600px] mx-auto md:pt-4 md:pb-6">
       {/* container */}
       <div className="relative md:flex md:gap-5">
         {/* right section */}
         <div className="md:flex-1 overflow-visible">
           {/* product detail */}
-          <div className="w-full grid grid-cols-9 pt-6">
-            <div className="col-span-4 p-2">
-              <div className="flex items-center justify-between">
+          <div className="w-full grid grid-cols-9 md:p-6">
+            <div className="w-full col-span-9 md:col-span-4 p-2">
+              <div className="hidden md:flex items-center justify-between p-3">
                 <Image
                   src={comareSVG}
                   width={16}
@@ -46,16 +48,49 @@ export default function Container() {
                 <Image src={shareSVG} width={16} height={16} alt="share svg" />
                 <Image src={likeSVG} width={16} height={16} alt="like svg" />
               </div>
+              <ImageSlider />
             </div>
-            <div className="col-span-5 px-4">
-              <p className="text-[#343A40] text-2xl">
+            <div className=" w-full col-span-9 md:col-span-5 md:px-4">
+              <div className="flex items-center justify-between md:hidden">
+                <div className="flex items-center gap-2 text-xs md:text-base">
+                  <span>برند:</span>
+                  <span className="text-[#339AF0] ">اپل</span>
+                </div>
+                <div className="flex items-center gap-6">
+                  <Image src={likeSVG} width={24} height={24} alt="like svg" />
+                  <Image
+                    src={comareSVG}
+                    width={24}
+                    height={24}
+                    alt="compare icon"
+                  />
+                  <Image
+                    src={shareSVG}
+                    width={24}
+                    height={24}
+                    alt="share svg"
+                  />
+                </div>
+              </div>
+              <p className="text-[#343A40] pt-2 md:p-0 md:text-2xl text-justify">
                 گوشی موبایل اپل مدل iPhone 16 Not Active ظرفیت 128 گیگابایت - رم
                 6 گیگابایت
               </p>
-              <span className="text-[#868E96] text-xs font-light">
+              <p className="text-[#868E96] text-xs font-light text-left md:text-right pt-1 md:p-0">
                 iPhone 16 Not Active 128/6
-              </span>
-              <div className="flex items-center justify-between">
+              </p>
+              <div className="flex md:hidden items-center justify-between py-4">
+                <span className="text-xs text-white font-semibold bg-[#20C997] flex items-center gap-2 p-2 rounded-lg">
+                  کالای اصل
+                </span>
+                <span className="text-xs text-[#343A40] font-semibold bg-[#DEE2E6] flex items-center gap-2 p-2 rounded-lg">
+                  4.5 امتیاز
+                </span>
+                <span className="text-xs text-[#1C7ED6] font-semibold bg-[#D0EBFF] flex items-center gap-2 p-2 rounded-lg">
+                  کالای اصل
+                </span>
+              </div>
+              <div className="hidden md:flex items-center justify-between my-6 md:my-0">
                 <div className="flex items-center gap-[18px] text-[14px]">
                   <div className="flex items-center gap-2">
                     <span>برند:</span>
@@ -92,7 +127,7 @@ export default function Container() {
               <div className="pt-4">
                 <p className="text-[14px] font-semibold pb-4">گارانتی:</p>
                 <div>
-                  <div className="w-fit h-[56px] flex items-center gap-2 p-4 bg-[#FFF4E6] border border-[#F76707] rounded-xl">
+                  <div className="w-full md:w-fit h-[56px] flex items-center gap-2 p-4 bg-[#FFF4E6] border border-[#F76707] rounded-xl">
                     <Image
                       src={checksquareSVG}
                       width={16}
@@ -131,8 +166,8 @@ export default function Container() {
                             شرایط و توضیحات
                           </p>
                         </div>
-                        <div className="w-[146px]">
-                          <p className="flex items-center justify-end gap-2">
+                        <div className="w-1/3">
+                          <p className="flex items-center justify-end gap-1 md:gap-2">
                             <span className="font-bold">1,080,000</span>
                             <span>
                               <Image
@@ -143,8 +178,8 @@ export default function Container() {
                               />
                             </span>
                           </p>
-                          <div className="w-full flex flex-row-reverse items-center justify-between">
-                            <span className="text-[14px] text-[#868E96] font-light line-through">
+                          <div className="w-full flex md:flex-row-reverse items-center justify-between gap-1 md:gap-0">
+                            <span className="text-xs md:text-[14px] text-[#FF6B6B] md:text-[#868E96] font-light line-through">
                               1,200,000
                             </span>
                             <span className="w-8 h-6 bg-[#FF6B6B] text-white text-xs font-extrabold px-2 py-1 rounded-lg">
@@ -157,16 +192,129 @@ export default function Container() {
                   </label>
                 </div>
               </div>
-              {/* properties */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="w-full bg-[#F8F9FA] border border-[#F1F3F5] rounded-xl p-3"></div>
+              {/* feature */}
+              <div className="gap-4 pt-4">
+                <div className="w-full flex items-center justify-between md:hidden py-4">
+                  <span className="text-xs font-semibold">ویژگی‌های کالا</span>
+                  <a
+                    href="#"
+                    className="text-[10px] text-[#339AF0] font-medium "
+                  >
+                    نمایش تمام ویژگی‌ها
+                  </a>
+                </div>
+                <div className="w-full flex items-center gap-2 overflow-x-auto md:grid grid-cols-3 md:gap-4">
+                  <div className="w-fit md:h-[68px] bg-[#F8F9FA] border border-[#F1F3F5] rounded-xl p-3 space-y-3 whitespace-nowrap">
+                    <div className="flex items-center gap-2">
+                      <Image src={wrapProducts} width={16} height={16} alt="" />
+                      <span className="text-[10px] font-normal text-[#343A40]">
+                        فناوری صفحه‌ نمایش
+                      </span>
+                    </div>
+                    <div className="w-fit text-[10px] text-[#343A40] font-semibold line-clamp-1">
+                      LTPO Super Retina XDR OLED
+                    </div>
+                  </div>
+                  <div className="w-fit md:h-[68px] bg-[#F8F9FA] border border-[#F1F3F5] rounded-xl p-3 space-y-3 whitespace-nowrap">
+                    <div className="flex items-center gap-2">
+                      <Image src={wrapProducts} width={16} height={16} alt="" />
+                      <span className="text-[10px] font-normal text-[#343A40]">
+                        فناوری صفحه‌ نمایش
+                      </span>
+                    </div>
+                    <div className="w-fit text-[10px] text-[#343A40] font-semibold line-clamp-1">
+                      LTPO Super Retina XDR OLED
+                    </div>
+                  </div>
+                  <div className="w-fit md:h-[68px] bg-[#F8F9FA] border border-[#F1F3F5] rounded-xl p-3 space-y-3 whitespace-nowrap">
+                    <div className="flex items-center gap-2">
+                      <Image src={wrapProducts} width={16} height={16} alt="" />
+                      <span className="text-[10px] font-normal text-[#343A40]">
+                        فناوری صفحه‌ نمایش
+                      </span>
+                    </div>
+                    <div className="w-fit text-[10px] text-[#343A40] font-semibold line-clamp-1">
+                      LTPO Super Retina XDR OLED
+                    </div>
+                  </div>
+                  <div className="w-fit md:h-[68px] bg-[#F8F9FA] border border-[#F1F3F5] rounded-xl p-3 space-y-3 whitespace-nowrap">
+                    <div className="flex items-center gap-2">
+                      <Image src={wrapProducts} width={16} height={16} alt="" />
+                      <span className="text-[10px] font-normal text-[#343A40]">
+                        فناوری صفحه‌ نمایش
+                      </span>
+                    </div>
+                    <div className="w-fit text-[10px] text-[#343A40] font-semibold line-clamp-1">
+                      LTPO Super Retina XDR OLED
+                    </div>
+                  </div>
+                </div>
               </div>
+              {/* show other features */}
+              <a
+                href="#"
+                className="hidden my-2 py-2 text-center md:flex items-center justify-center gap-4 text-xs text-[#339AF0] font-normal"
+              >
+                نمایش تمام ویژگی‌ها
+                <Image
+                  src={chevronDownSVG}
+                  width={8}
+                  height={8}
+                  alt="chevron down"
+                />
+              </a>
+              <p className="hidden md:block text-xs font-normal text-[#343A40] leading-6 text-justify">
+                درخواست بازگشت کالا در دسته نمایشگر (موبایل) در فروشگاه آی‌تی
+                هوم تنها با دلیل "انصراف از خرید" و در صورتی پذیرفته می‌شود که
+                کالا در شرایط اولیه خود باشد (در صورت پلمپ بودن، نباید باز شده
+                باشد). مانیتور با تعداد بالای 3 پیکسل سوخته فقط شامل ضمانت
+                بازگشت می‌شود.
+              </p>
             </div>
+          </div>
+          {/* facilities */}
+          <div className="w-ful flex items-center md:justify-evenly mt-4 p-4 overflow-x-auto">
+            <div className="w-[160px] md:w-fit whitespace-nowrap flex flex-col items-center gap-2 p-4">
+              <Image src={homeSVG} width={38} height={38} alt="" />
+              <span className="text-xs text-[#868E96] font-semibold">
+                خرید حضوری
+              </span>
+            </div>
+            <div className="w-[160px] md:w-fit whitespace-nowrap flex flex-col items-center gap-2 p-4">
+              <Image src={headphonesSVG} width={38} height={38} alt="" />
+              <span className="text-xs text-[#868E96] font-semibold">
+                پشتیبانی 10:30 تا 17
+              </span>
+            </div>
+            <div className="w-[160px] md:w-fit whitespace-nowrap flex flex-col items-center gap-2 p-4">
+              <Image src={checkListSVG} width={38} height={38} alt="" />
+              <span className="text-xs text-[#868E96] font-semibold">
+                تضمین اصالت کالا
+              </span>
+            </div>
+            <div className="w-[160px] md:w-fit whitespace-nowrap flex flex-col items-center gap-2 p-4">
+              <Image src={fastDeliverySVG} width={38} height={38} alt="" />
+              <span className="text-xs text-[#868E96] font-semibold">
+                ارسال فوری در تهران
+              </span>
+            </div>
+            <div className=" w-[160px] md:w-fit whitespace-nowrap flex flex-col items-center gap-2 p-4">
+              <Image src={productsSVG} width={38} height={38} alt="" />
+              <span className="text-xs text-[#868E96] font-semibold">
+                تامین حرفه‌ای کالا
+              </span>
+            </div>
+          </div>
+          {/* divider */}
+          <div className="relative w-full h-[1px] bg-[#DEE2E6] mt-4 mb-3">
+            <span className="absolute -top-5 right-0 bg-white p-2 text-[14px] font-bold text-[#343A40]">
+              نیازت میشه
+            </span>
           </div>
         </div>
         {/* left section */}
         <div>
-          <div className="sticky top-[140px] space-y-2">
+          <div className="sticky top-[170px] space-y-2">
             {/* top section */}
             <div className="space-y-4 md:bg-[#F8F9FA] md:border md:border-[#CED4DA] md:rounded-2xl p-4">
               <div className="flex flex-col items-center gap-1">

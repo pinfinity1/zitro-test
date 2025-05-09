@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Breadcrumb() {
   return (
-    <div className="w-full max-w-[1600px] mx-auto md:min-h-[64px] py-4 flex items-center md:py-0 overflow-x-auto md:mt-0">
+    <div className="w-full max-w-[1600px] mx-auto md:min-h-[64px] py-1 flex items-center md:py-0 overflow-x-auto md:mt-0">
       <Link href={"/"} className="text-[10px] p-2 mb-0.5">
         زیترو
       </Link>
